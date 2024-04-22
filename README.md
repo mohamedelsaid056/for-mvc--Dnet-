@@ -50,22 +50,59 @@
  -------------------------------
 </div>
 
----
---------------
----
 
 
 هاتقابل وانت بذاكر موضوع ال json يا ريت لو ماتعرفوش قبل كده تبص علي الليك ده 
 
 [شرح json](https://www.youtube.com/playlist?list=PLHIfW1KZRIflA5jVQbAAHVizSxoeOAtgq)
 
-ياريت تراجع كويس الفرق ما بين ال inhertace و interface في cSharpe لان هايتبني عليهم فهم كتير 
-في حاله انك عاوز ترجع من Action file في 
+### تراجع كويس الفرق ما بين ال inhertace و interface في cSharpe لان هايتبني عليهم فهم كتير  
+
+
+### حاله انك عاوز ترجع من Action file في عندك 3 انواع
+حاله `VirtualFileResult` ودي هاتكون في حاله ان ال media عندك في wwwroot 
+
+```
+return File("file relative path", "content type");
+```
+حاله `PhysicalFileResult` ودي هاتكون في حاله ان ال media عندك في علي الجهاز مثلا  
+
+```
+return PhysicalFile("file absolute path", "content type");
+```
+حاله `FileContentResult` ودي هاتكون في حاله ان ال media هاتجيبها مثلا من database وهاتجيبها في صوره  byte[ ] 
+
+```
+return File(byte_array, "content type");
+```
+يا ريت تكون فاكر ال state code من http وايه الفرق بين ال 301 و 302 و 404 و 400 و 401 وركز علي 301 و 302 لان يالفرق الي ما بينهم كبير 
+
+في حاله ال Statecode 
+ ال code 400 بيعبر عن `Bad Request` يعني في مشكله في validation 
+ ```
+return BadRequest();
+
+```
+ال code 404 بيعبر عن `NotFound` يعني في مشكله في بعض المعلومات من الناقصه عن server 
+ ```
+return NotFound();
+
+```
+ال code 400 بيعبر عن `Unauthorizied` يعني في مشكله  في ال user معندهوش صلاحيه 
+ ```
+return Unauthorized();
+
+```
+ 
+ 
 
 
 
-`----------------------`
-***
+
+
+
+
+
 
 
 
