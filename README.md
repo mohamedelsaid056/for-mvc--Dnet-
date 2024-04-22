@@ -20,3 +20,30 @@
   
 </div>
 
+
+
+    
+<img align="left" width="600" src="https://github.com/mohamedelsaid056/for-mvc--Dnet-/assets/138726588/025360c6-0f48-4d2e-97a0-bc68689d275f" />
+# 
+#
+
+##  افكرك مره تانيه بموضوع ترتيب ال middleware لانه في الاساس pipeline والترتيب مهم وان app.Run لازم تكون اخر حاجه ومن غيرها هايحصل exception لان دي الي هاتعمل short-circuiting للكل
+
+<br>
+<br>
+<br>
+
+
+## وظيفه ال Controllers
+#### 1- بيقرا ال request 
+بالي فيه من المعلومات زي ال query string و request body وrequest cookies و request header 
+#### 2-عمليه ال validation  
+وده موضوع لوحده 
+#### 3- جوه ال action  هانعمل invoke ل model والموضوع ده مش بصوره دقيقه لان في حاجه اسمها Services هي الي هانشتغل بيها 
+#### 4 - من خلاله بقدر ارجع ملعومات زي زي صفحات html او files ....
+
+
+
+
+
+
