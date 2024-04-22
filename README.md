@@ -60,36 +60,49 @@
 
 
 ### حاله انك عاوز ترجع من Action file في عندك 3 انواع
-حاله `VirtualFileResult` ودي هاتكون في حاله ان ال media عندك في wwwroot 
 
 ```
+//Represents a file within the WebRoot ('wwwroot' by default) folder.
+
 return File("file relative path", "content type");
-```
-حاله `PhysicalFileResult` ودي هاتكون في حاله ان ال media عندك في علي الجهاز مثلا  
+``` 
 
 ```
+//Represents a file that is not necessarily part of the project folder.
+//Used when the file is present outside the WebRoot folder.
+
 return PhysicalFile("file absolute path", "content type");
 ```
-حاله `FileContentResult` ودي هاتكون في حاله ان ال media هاتجيبها مثلا من database وهاتجيبها في صوره  byte[ ] 
+ح
 
 ```
+//Represents a file from the byte[ ].
+//Used when a part of the file or byte[ ] from other data source has to be sent as response.
+
 return File(byte_array, "content type");
 ```
-يا ريت تكون فاكر ال state code من http وايه الفرق بين ال 301 و 302 و 404 و 400 و 401 وركز علي 301 و 302 لان يالفرق الي ما بينهم كبير 
+### ريت تكون فاكر ال state code من http وايه الفرق بين ال 301 و 302 و 404 و 400 و 401 وركز علي 301 و 302 لان يالفرق الي ما بينهم كبير 
 
-في حاله ال Statecode 
- ال code 400 بيعبر عن `Bad Request` يعني في مشكله في validation 
+### حاله ال Statecode 404 و 400 و 401
+ 
  ```
+//Represents response with HTTP status code '400 Bad Request'.
+//Used when the request values are invalid (validation error).
+
 return BadRequest();
 
 ```
-ال code 404 بيعبر عن `NotFound` يعني في مشكله في بعض المعلومات من الناقصه عن server 
  ```
+//Represents response with HTTP status code '404 Not Found'.
+//Used when the requested information is not available at server.
+
 return NotFound();
 
 ```
-ال code 400 بيعبر عن `Unauthorizied` يعني في مشكله  في ال user معندهوش صلاحيه 
  ```
+//Represents response with HTTP status code '401 Unauthorized'.
+//Used when the user is unauthorized (not signed in).
+
 return Unauthorized();
 
 ```
